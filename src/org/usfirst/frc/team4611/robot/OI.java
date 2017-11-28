@@ -16,14 +16,12 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
-	public Joystick turretJoy;
 	
 	public Button driveTrack;
 	
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
-		turretJoy = new Joystick(RobotMap.turretJoyPort);
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
 	}
