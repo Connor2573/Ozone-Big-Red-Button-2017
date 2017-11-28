@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4611.robot;
 
-import org.usfirst.frc.team4611.robot.commands.FollowTargetDrive;
+
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -26,7 +26,6 @@ public class OI {
 		turretJoy = new Joystick(RobotMap.turretJoyPort);
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
-		driveTrack.whileHeld(new FollowTargetDrive());
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value

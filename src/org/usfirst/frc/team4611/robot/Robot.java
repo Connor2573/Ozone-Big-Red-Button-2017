@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4611.robot.commands.TankDrive;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team4611.robot.subsystems.Turret;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,7 +24,6 @@ import org.usfirst.frc.team4611.robot.subsystems.Turret;
 public class Robot extends IterativeRobot {
 
 	public static DriveTrain tankDrive;
-	public static Turret turret;
 	public static OI oi;
 	public static NetworkTable visionTable;
 
@@ -41,7 +40,6 @@ public class Robot extends IterativeRobot {
 		
 		//Initialize the subsystems
 		tankDrive = new DriveTrain();
-		turret = new Turret();
 		oi = new OI();
 		
 		visionTable = NetworkTable.getTable("Vision"); //Network tables to pull
