@@ -19,9 +19,6 @@ public class RobotMap {
 	public static Victor driveTrainBL;
 	public static Victor driveTrainBR;
 	
-	public static CANTalon turretMotor;
-	
-	public static FeedbackDevice turretEncoder;
 	
 	//Joystick ports
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
@@ -30,7 +27,6 @@ public class RobotMap {
 	
 	public static void init () {
 		
-		turretEncoder = (FeedbackDevice.CtreMagEncoder_Absolute);
 		//PWM Ports
 		//PWM ports are physically on the rio and the number on the port should match with the int in code
 		driveTrainFL = new Victor(3);
@@ -40,8 +36,6 @@ public class RobotMap {
 		
 		//CAN Ports
 		//CAN ports are decided via software in the roborio web interface 
-		turretMotor = new CANTalon(11);
-		turretMotor.setFeedbackDevice(turretEncoder);
 		
 		//Objects
 		driveTrain =  new RobotDrive(driveTrainFL, driveTrainBL, driveTrainFR, driveTrainBR);
