@@ -25,7 +25,7 @@ public class Robot extends IterativeRobot {
 
 	public static DriveTrain tankDrive;
 	public static OI oi;
-	public static NetworkTable visionTable;
+	
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -42,7 +42,6 @@ public class Robot extends IterativeRobot {
 		tankDrive = new DriveTrain();
 		oi = new OI();
 		
-		visionTable = NetworkTable.getTable("Vision"); //Network tables to pull
 	}
 
 	/**
