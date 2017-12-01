@@ -12,12 +12,17 @@ import edu.wpi.first.wpilibj.Victor;
  * This is where you're probably gonna end up when incorrect motors are running or we change ports for certain motors.
  */
 public class RobotMap {
+	
+
 	public static RobotDrive driveTrain;
 	
 	public static Victor driveTrainFL;
 	public static Victor driveTrainFR;
 	public static Victor driveTrainBL;
 	public static Victor driveTrainBR;
+	
+	public static double singleShooterSpeed = 3600;
+	public static int singleShooter = 21; //shooter talon port
 	
 	
 	//Joystick ports

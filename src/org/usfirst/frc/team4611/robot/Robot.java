@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4611.robot.commands.TankDrive;
 import org.usfirst.frc.team4611.robot.commands.relaySpike;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4611.robot.subsystems.SingleWheelShooter;
 
 
 /**
@@ -31,6 +32,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain tankDrive;
 	public static OI oi;
 	public static relaySpike spike;
+	public static SingleWheelShooter sw;
 	
 
 	Command autonomousCommand;
