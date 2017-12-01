@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4611.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -11,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team4611.robot.commands.TankDrive;
+import org.usfirst.frc.team4611.robot.commands.relaySpike;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
 
 
@@ -28,6 +30,7 @@ public class Robot extends IterativeRobot {
 
 	public static DriveTrain tankDrive;
 	public static OI oi;
+	public static relaySpike spike;
 	
 
 	Command autonomousCommand;
@@ -44,7 +47,7 @@ public class Robot extends IterativeRobot {
 		//Initialize the subsystems
 		tankDrive = new DriveTrain();
 		oi = new OI();
-		
+		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed
 	}
 
 	/**
@@ -105,6 +108,7 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
+		spike.start();	
 	}
 
 	/**
