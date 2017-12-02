@@ -1,4 +1,8 @@
 /bin/
 /build/*
 /dist/
+<<<<<<< HEAD
 sysProps.xml
+=======
+sysProps.xml
+>>>>>>> 05652eaca2ac845e480401a73dc8775bd3c2bec4
