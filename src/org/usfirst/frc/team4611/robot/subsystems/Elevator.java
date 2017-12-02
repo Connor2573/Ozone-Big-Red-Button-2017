@@ -7,9 +7,9 @@ public class Elevator extends Subsystem {
 
 	private Victor elevator;
 	
-	public Elevator()
+	public Elevator(int port)
 	{
-		this.elevator = new Victor(5);
+		this.elevator = new Victor(port); // Check ports! PLEASE!!!
 	}
 	@Override
 	protected void initDefaultCommand() {
