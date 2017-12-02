@@ -38,7 +38,7 @@ public class OI {
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
 		spinAgitator = new JoystickButton(shootJoy, 2); // speed is 0.45
-		this.spinAgitator.toggleWhenPressed(new SpinAgitator(shootJoy.getZ() + 0.45));
+		this.spinAgitator.toggleWhenPressed(new SpinAgitator(shootJoy.getZ()));
 		
 		raiseElevator = new JoystickButton(shootJoy, 3); //button 11 on leftjoy
 		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));

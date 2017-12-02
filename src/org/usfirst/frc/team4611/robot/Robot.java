@@ -59,7 +59,7 @@ public class Robot extends IterativeRobot {
 		ag = new Agitator();
 		shooterWheels = new ShooterWheels();
 
-		oi = new OI();
+		oi = new OI(); //put above this
 
 	}
 
