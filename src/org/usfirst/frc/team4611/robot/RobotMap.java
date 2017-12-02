@@ -27,6 +27,7 @@ public class RobotMap {
 	public static int rightJoyPort = 1; //But rather decided from the drivers station by the drivers
 	public static int turretJoyPort = 2;
 	public static int elevatorPort = 5; // port number needed PLEASE!!!
+	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
 
 	public static double shooterSpeedLow = 0.7;
 	public static double shooterSpeedMed = 0.8;

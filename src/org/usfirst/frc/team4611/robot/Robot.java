@@ -3,23 +3,17 @@ package org.usfirst.frc.team4611.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import org.usfirst.frc.team4611.robot.commands.TankDrive;
 import org.usfirst.frc.team4611.robot.commands.relaySpike;
+import org.usfirst.frc.team4611.robot.subsystems.Agitator;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
 
 import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
 
 import org.usfirst.frc.team4611.robot.subsystems.Elevator;
-import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
 
 
 
@@ -40,7 +34,8 @@ public class Robot extends IterativeRobot {
 	public static relaySpike spike;
 	public static ShooterWheels sw;
 	public static Elevator el;
-	public static ShooterWheels shooterWheels = new ShooterWheels();
+	public static ShooterWheels shooterWheels;
+	public static Agitator ag;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -59,6 +54,8 @@ public class Robot extends IterativeRobot {
 		el = new Elevator(RobotMap.elevatorPort); 
 		sw = new ShooterWheels();
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
+		ag = new Agitator();
+		shooterWheels = new ShooterWheels();
 	}
 
 	/**
