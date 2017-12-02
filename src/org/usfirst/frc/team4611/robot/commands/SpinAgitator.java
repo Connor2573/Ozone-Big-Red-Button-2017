@@ -10,7 +10,8 @@ public class SpinAgitator extends Command {
 	
 	public SpinAgitator(double sp)
 	{
-		this.speed = sp;
+		this.speed = sp; //Check negative or positive for direction of rotation
+		//should spin clockwise
 		this.requires(Robot.ag);
 	}
 	
