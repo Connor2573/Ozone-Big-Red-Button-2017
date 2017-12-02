@@ -12,7 +12,6 @@ import org.usfirst.frc.team4611.robot.commands.relaySpike;
 import org.usfirst.frc.team4611.robot.subsystems.Agitator;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
 
-import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
 
 import org.usfirst.frc.team4611.robot.subsystems.Elevator;
 
@@ -33,9 +32,9 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain tankDrive;
 	public static OI oi;
 	public static relaySpike spike;
-	public static ShooterWheels sw;
+	//public static ShooterWheels sw;
 	public static Elevator el;
-	public static ShooterWheels shooterWheels;
+	//public static ShooterWheels shooterWheels;
 	public static Agitator ag;
 	CameraServer server;
 
@@ -57,10 +56,10 @@ public class Robot extends IterativeRobot {
 		tankDrive = new DriveTrain();
 		oi = new OI();
 		el = new Elevator(RobotMap.elevatorPort); 
-		sw = new ShooterWheels();
+		//sw = new ShooterWheels();
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 		ag = new Agitator();
-		shooterWheels = new ShooterWheels();
+		//shooterWheels = new ShooterWheels();
 	}
 
 	/**

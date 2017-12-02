@@ -2,7 +2,7 @@ package org.usfirst.frc.team4611.robot;
 
 
 
-import org.usfirst.frc.team4611.robot.commands.ShooterWheelsMove;
+
 import org.usfirst.frc.team4611.robot.commands.SpinAgitator;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -33,7 +33,7 @@ public class OI {
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
-		wheelSpeedLow = new JoystickButton(shootJoy, 2); //.70 power; the next 3 button placements need CHECKED!
+		/*wheelSpeedLow = new JoystickButton(shootJoy, 2); //.70 power; the next 3 button placements need CHECKED!
 		this.wheelSpeedLow.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedLow));
 		wheelSpeedMed = new JoystickButton(shootJoy, 3); //.80 power
 		this.wheelSpeedMed.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedMed));
@@ -42,7 +42,7 @@ public class OI {
 		wheelSpeedAll = new JoystickButton(shootJoy, 5); // 1.0 power
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));
 		spinAgitator = new JoystickButton(shootJoy, 6); // Button for spinning the agitator
-		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
+		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));*/
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
