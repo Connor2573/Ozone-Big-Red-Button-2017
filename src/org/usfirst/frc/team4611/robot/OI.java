@@ -2,6 +2,7 @@ package org.usfirst.frc.team4611.robot;
 
 
 
+import org.usfirst.frc.team4611.robot.commands.RaiseElevator;
 import org.usfirst.frc.team4611.robot.commands.ShooterWheelsMove;
 import org.usfirst.frc.team4611.robot.commands.SpinAgitator;
 
@@ -27,6 +28,7 @@ public class OI {
 	public Button wheelSpeedHigh;
 	public Button wheelSpeedAll;
 	public Button spinAgitator;
+	public Button raiseElevator;
 	
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
@@ -43,6 +45,8 @@ public class OI {
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));
 		spinAgitator = new JoystickButton(shootJoy, 6); // Button for spinning the agitator
 		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
+		raiseElevator = new JoystickButton(shootJoy, 7); //Button for lifting the angle of the shooter
+		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
