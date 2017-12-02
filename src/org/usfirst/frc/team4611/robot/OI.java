@@ -2,6 +2,8 @@ package org.usfirst.frc.team4611.robot;
 
 
 
+import org.usfirst.frc.team4611.robot.commands.ShooterWheelsMove;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -16,14 +18,18 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
+	public Joystick shootJoy;
 	
 	public Button driveTrack;
+	public Button wheelSpinner;
 	
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
+		wheelSpinner = new JoystickButton(shootJoy, 1);
+		this.wheelSpinner.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeed));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
