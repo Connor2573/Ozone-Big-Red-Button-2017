@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4611.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Command;
@@ -35,6 +36,7 @@ public class Robot extends IterativeRobot {
 	public static Elevator el;
 	public static ShooterWheels shooterWheels;
 	public static Agitator ag;
+	CameraServer server;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -50,7 +52,8 @@ public class Robot extends IterativeRobot {
 		//Initialize the subsystems
 		tankDrive = new DriveTrain();
 		//sw = new ShooterWheels();
-		
+		server = CameraServer.getInstance();
+		server.startAutomaticCapture();
 		el = new Elevator(RobotMap.elevatorPort); 
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 		ag = new Agitator();
