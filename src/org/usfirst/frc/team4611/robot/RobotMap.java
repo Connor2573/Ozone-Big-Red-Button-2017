@@ -21,14 +21,20 @@ public class RobotMap {
 	public static Victor driveTrainBL;
 	public static Victor driveTrainBR;
 	
+<<<<<<< HEAD
     public static final int leftShooterWheel = 4; //wheel ports
     public static final int rightShooterWheel = 5;
+=======
+	public static double singleShooterSpeed = 3600;
+	public static int singleShooter = 21; //shooter talon port
+>>>>>>> dedae73c1ea23dcb55e4b21516faec1685a1c538
 	
 	
 	//Joystick ports
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
 	public static int rightJoyPort = 1; //But rather decided from the drivers station by the drivers
 	public static int turretJoyPort = 2;
+	public static int elevatorPort = 5; // port number needed PLEASE!!!
 	
 	public static void init () {
 		
