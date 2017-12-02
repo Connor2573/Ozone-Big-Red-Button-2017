@@ -24,6 +24,10 @@ public class SpinAgitator extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	if(speed > 1.0)
+    	{
+    		speed = 1.0;
+    	}
         Robot.ag.spin(this.speed);
     }
     
@@ -32,12 +36,10 @@ public class SpinAgitator extends Command {
 		// TODO Auto-generated method stub
 		return false;
 	}
-<<<<<<< HEAD
+	
 	protected void end() {
         Robot.ag.spin(0);
     }
 
-=======
 //Should we have an end() method for the agitator, or is the shooter simply going to shoot non-stop?
->>>>>>> 9432ca0f63138598335165288dd4508e67b7671e
 }
