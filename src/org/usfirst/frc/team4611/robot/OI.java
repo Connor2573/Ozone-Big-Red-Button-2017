@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
-	public Joystick shootJoy;
+	public Joystick shootJoy; //changed values for testing
 	
 	public Button driveTrack;
 	public Button wheelSpeedLow;
@@ -35,17 +35,23 @@ public class OI {
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
-		wheelSpeedLow = new JoystickButton(shootJoy, 2); //.70 power; the next 3 button placements need CHECKED!
+		
+		wheelSpeedLow = new JoystickButton(leftJoy, 2); //.70 power; the next 3 button placements need CHECKED!
 		this.wheelSpeedLow.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedLow));
-		wheelSpeedMed = new JoystickButton(shootJoy, 3); //.80 power
+		
+		wheelSpeedMed = new JoystickButton(leftJoy, 3); //.80 power
 		this.wheelSpeedMed.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedMed));
-		wheelSpeedHigh = new JoystickButton(shootJoy, 4); // .90 powers
+		
+		wheelSpeedHigh = new JoystickButton(leftJoy, 4); // .90 powers
 		this.wheelSpeedHigh.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedHigh));
-		wheelSpeedAll = new JoystickButton(shootJoy, 5); // 1.0 power
+		
+		wheelSpeedAll = new JoystickButton(leftJoy, 5); // 1.0 power
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));
-		spinAgitator = new JoystickButton(shootJoy, 6); // Button for spinning the agitator
+		
+		spinAgitator = new JoystickButton(leftJoy, 6); // Button for spinning the agitator
 		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
-		raiseElevator = new JoystickButton(shootJoy, 7); //Button for lifting the angle of the shooter
+		
+		raiseElevator = new JoystickButton(leftJoy, 7); //Button for lifting the angle of the shooter
 		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));
 	}
 	

@@ -17,13 +17,15 @@ public class ShooterWheels extends Subsystem {
     // here. Call these from Commands.
 
     public void shoot(double speed) {
-        this.left.set(speed);
+    	this.left.set(speed);
         this.right.set(-speed);
     }
 
     @Override
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
+    	 this.left.set(0);
+        this.right.set(0);
         //setDefaultCommand(new MySpecialCommand());
     }
 }

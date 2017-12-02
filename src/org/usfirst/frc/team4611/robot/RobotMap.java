@@ -20,20 +20,20 @@ public class RobotMap {
 	
     public static final int leftShooterWheel = 4; //wheel ports
     public static final int rightShooterWheel = 5;
-
+    //public static int turretJoyPort = 2;
+	public static int elevatorPort = 7; // port number needed PLEASE!!!
+	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
 	
-	//Joystick ports
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
 	public static int rightJoyPort = 1; //But rather decided from the drivers station by the drivers
-	public static int turretJoyPort = 2;
-	public static int elevatorPort = 5; // port number needed PLEASE!!!
-	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
+	
+	
 
 	public static double shooterSpeedLow = 0.7;
 	public static double shooterSpeedMed = 0.8;
 	public static double shooterSpeedHigh = 0.9;
 	public static double shooterSpeedAll = 1.0;
-	public static double agitatorSpeed = 0.15;
+	public static double agitatorSpeed = 0.45;
 	public static double elevatorSpeed = 0.2; //Double check speed
 
 	

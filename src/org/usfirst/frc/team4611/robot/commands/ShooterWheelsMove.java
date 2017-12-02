@@ -15,12 +15,13 @@ public class ShooterWheelsMove extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         this.speed = inputSpeed;
-        this.requires(Robot.sw);
+        this.requires(Robot.shooterWheels);
     }
 
     // Called just before this Command runs the first time
     @Override
-    protected void initialize() { 
+    protected void initialize() {
+    	Robot.shooterWheels.shoot(0);
     }
 
     // Called repeatedly when this Command is scheduled to run

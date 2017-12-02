@@ -31,5 +31,8 @@ public class SpinAgitator extends Command {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	protected void end() {
+        Robot.ag.spin(0);
+    }
 
 }
