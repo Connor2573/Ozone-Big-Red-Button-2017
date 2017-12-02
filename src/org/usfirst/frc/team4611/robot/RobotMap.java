@@ -1,8 +1,5 @@
 package org.usfirst.frc.team4611.robot;
 
-import com.ctre.CANTalon;
-import com.ctre.CANTalon.FeedbackDevice;
-
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
 
@@ -31,7 +28,10 @@ public class RobotMap {
 	public static int turretJoyPort = 2;
 	public static int elevatorPort = 5; // port number needed PLEASE!!!
 
-	public static double shooterSpeed = 0.7;
+	public static double shooterSpeedLow = 0.7;
+	public static double shooterSpeedMed = 0.8;
+	public static double shooterSpeedHigh = 0.9;
+	public static double shooterSpeedAll = 1.0;
 	
 	public static void init () {
 		

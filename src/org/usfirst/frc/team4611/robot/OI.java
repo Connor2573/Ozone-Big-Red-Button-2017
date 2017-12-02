@@ -21,15 +21,24 @@ public class OI {
 	public Joystick shootJoy;
 	
 	public Button driveTrack;
-	public Button wheelSpinner;
+	public Button wheelSpeedLow;
+	public Button wheelSpeedMed;
+	public Button wheelSpeedHigh;
+	public Button wheelSpeedAll;
 	
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
 		
 		driveTrack = new JoystickButton(leftJoy, 1);
-		wheelSpinner = new JoystickButton(shootJoy, 1);
-		this.wheelSpinner.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeed));
+		wheelSpeedLow = new JoystickButton(shootJoy, 2); //.70 power; the next 3 button placements need CHECKED!
+		this.wheelSpeedLow.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedLow));
+		wheelSpeedMed = new JoystickButton(shootJoy, 3); //.80 power
+		this.wheelSpeedMed.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedMed));
+		wheelSpeedHigh = new JoystickButton(shootJoy, 4); // .90 powers
+		this.wheelSpeedHigh.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedHigh));
+		wheelSpeedAll = new JoystickButton(shootJoy, 5); // 1.0 power
+		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
