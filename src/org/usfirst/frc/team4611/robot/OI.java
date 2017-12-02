@@ -34,19 +34,19 @@ public class OI {
 		
 		//driveTrack = new JoystickButton(leftJoy, 1); What?
 		
-		wheelSpeedAll = new JoystickButton(shootJoy, 1); // 1.0 power
-		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));
+		wheelSpeedAll = new JoystickButton(shootJoy, 1);//button 10 on right
+		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
-		spinAgitator = new JoystickButton(shootJoy, 2); // Button for spinning the agitator
+		spinAgitator = new JoystickButton(shootJoy, 2); //button 7 on left
 		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
 		
-		raiseElevator = new JoystickButton(shootJoy, 3); //Button for lifting the angle of the shooter
+		raiseElevator = new JoystickButton(shootJoy, 3); //button 11 on leftjoy
 		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
     {
-        if (Math.abs(raw) < .15) {
+        if (Math.abs(raw) < .20) {
             return 0; //If the value passed is less than 15% ignore it. This is reffered to as a deadzone
         } else {
             return  raw * 0.7; //Set the output to a ceratin percent of of the input
