@@ -33,7 +33,7 @@ public class RobotMap {
 	public static double shooterSpeedMed = 0.8;
 	public static double shooterSpeedHigh = 0.9;
 	public static double shooterSpeedAll = 1.0;
-	public static double agitatorSpeed = 0.15;
+	public static double agitatorSpeed = 0.15; //Should we have multiple speeds? So that when it is lined up it goes faster?
 	public static double elevatorSpeed = 0.2; //Double check speed
 
 	

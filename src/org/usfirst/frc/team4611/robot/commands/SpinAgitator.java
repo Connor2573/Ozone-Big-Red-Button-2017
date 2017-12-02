@@ -31,5 +31,5 @@ public class SpinAgitator extends Command {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+//Should we have an end() method for the agitator, or is the shooter simply going to shoot non-stop?
 }
