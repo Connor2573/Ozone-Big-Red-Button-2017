@@ -58,7 +58,13 @@ public class Robot extends IterativeRobot {
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 		ag = new Agitator();
 		shooterWheels = new ShooterWheels();
+<<<<<<< HEAD
 		oi = new OI();
+=======
+		
+		server = CameraServer.getInstance();
+		server.startAutomaticCapture();
+>>>>>>> 9432ca0f63138598335165288dd4508e67b7671e
 	}
 
 	/**
