@@ -15,12 +15,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team4611.robot.commands.TankDrive;
 import org.usfirst.frc.team4611.robot.commands.relaySpike;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
-<<<<<<< HEAD
+
 import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
-=======
+
 import org.usfirst.frc.team4611.robot.subsystems.Elevator;
-import org.usfirst.frc.team4611.robot.subsystems.SingleWheelShooter;
->>>>>>> dedae73c1ea23dcb55e4b21516faec1685a1c538
+import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
+
 
 
 /**
@@ -38,13 +38,9 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain tankDrive;
 	public static OI oi;
 	public static relaySpike spike;
-<<<<<<< HEAD
-	public static ShooterWheels shooterWheels = new ShooterWheels();
-=======
-	public static SingleWheelShooter sw;
+	public static ShooterWheels sw;
 	public static Elevator el;
->>>>>>> dedae73c1ea23dcb55e4b21516faec1685a1c538
-	
+	public static ShooterWheels shooterWheels = new ShooterWheels();
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -61,6 +57,7 @@ public class Robot extends IterativeRobot {
 		tankDrive = new DriveTrain();
 		oi = new OI();
 		el = new Elevator(RobotMap.elevatorPort); 
+		sw = new ShooterWheels();
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 	}
 

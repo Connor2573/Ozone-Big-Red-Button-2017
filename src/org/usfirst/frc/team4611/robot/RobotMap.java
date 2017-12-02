@@ -21,13 +21,9 @@ public class RobotMap {
 	public static Victor driveTrainBL;
 	public static Victor driveTrainBR;
 	
-<<<<<<< HEAD
     public static final int leftShooterWheel = 4; //wheel ports
     public static final int rightShooterWheel = 5;
-=======
-	public static double singleShooterSpeed = 3600;
-	public static int singleShooter = 21; //shooter talon port
->>>>>>> dedae73c1ea23dcb55e4b21516faec1685a1c538
+
 	
 	
 	//Joystick ports

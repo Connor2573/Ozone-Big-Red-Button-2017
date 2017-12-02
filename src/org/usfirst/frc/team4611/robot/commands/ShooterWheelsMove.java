@@ -17,7 +17,7 @@ public class ShooterWheelsMove extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         this.speed = inputSpeed;
-        this.requires(Robot.shooterWheels);
+        this.requires(Robot.sw);
     }
 
     // Called just before this Command runs the first time
