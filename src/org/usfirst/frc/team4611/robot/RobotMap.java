@@ -33,6 +33,7 @@ public class RobotMap {
 	public static double shooterSpeedMed = 0.8;
 	public static double shooterSpeedHigh = 0.9;
 	public static double shooterSpeedAll = 1.0;
+	public static double elevatorSpeed = 0.2;
 
 	
 	public static void init () {
