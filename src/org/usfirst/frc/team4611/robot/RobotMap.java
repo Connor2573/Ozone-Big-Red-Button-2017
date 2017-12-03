@@ -22,7 +22,7 @@ public class RobotMap {
     public static final int rightShooterWheel = 5;
     
 	public static int elevatorPort = 7; // port number needed PLEASE!!!
-	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
+	public static int agitatorPort = 8; //CHECK PORT NUMBER PLEASE!!!
 	
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
 	public static int rightJoyPort = 1; //But rather decided from the drivers station by the drivers
