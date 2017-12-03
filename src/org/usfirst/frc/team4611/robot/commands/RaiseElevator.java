@@ -22,7 +22,7 @@ public class RaiseElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.el.raise(this.speed);
+        Robot.el.raise(Robot.oi.shootJoy.getZ());
     }
 	
 	@Override
@@ -30,5 +30,9 @@ public class RaiseElevator extends Command {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	protected void end() {
+        Robot.el.raise(0);
+    }
 
 }

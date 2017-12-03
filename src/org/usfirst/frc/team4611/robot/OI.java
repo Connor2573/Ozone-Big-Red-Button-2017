@@ -38,10 +38,10 @@ public class OI {
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
 		spinAgitator = new JoystickButton(shootJoy, 2); // speed is 0.45
-		this.spinAgitator.toggleWhenPressed(new SpinAgitator(shootJoy.getZ()));
+		this.spinAgitator.toggleWhenPressed(new SpinAgitator(rightJoy.getZ()));
 		
 		raiseElevator = new JoystickButton(shootJoy, 3); //button 11 on leftjoy
-		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));
+		this.raiseElevator.whileHeld(new RaiseElevator(shootJoy.getZ()));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value

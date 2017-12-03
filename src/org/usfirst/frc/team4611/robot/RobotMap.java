@@ -34,8 +34,6 @@ public class RobotMap {
 	public static double shooterSpeedHigh = 0.9;
 	public static double shooterSpeedAll = 1.0;
 
-	public static double elevatorSpeed = 0.2; //Double check speed
-
 	
 	public static void init () {
 		
