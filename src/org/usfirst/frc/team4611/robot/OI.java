@@ -20,7 +20,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
-	public Joystick shootJoy; //changed values for testing
 	
 	//public Button driveTrack;
 	public Button wheelSpeedAll;
@@ -30,18 +29,17 @@ public class OI {
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
 		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
-		shootJoy = new Joystick(RobotMap.shootJoyPort);
 		
 		//driveTrack = new JoystickButton(leftJoy, 1); What?
 		
-		wheelSpeedAll = new JoystickButton(shootJoy, 1);//button 10 on right
+		wheelSpeedAll = new JoystickButton(rightJoy, 1);//button 10 on right
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
-		spinAgitator = new JoystickButton(shootJoy, 2); // speed is 0.45
-		this.spinAgitator.toggleWhenPressed(new SpinAgitator((shootJoy.getZ()+1)*0.5));
+		spinAgitator = new JoystickButton(rightJoy, 2); // speed is 0.45
+		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
 		
-		raiseElevator = new JoystickButton(shootJoy, 3); //button 11 on leftjoy
-		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeed));
+		raiseElevator = new JoystickButton(rightJoy, 3); //button 11 on leftjoy
+		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value

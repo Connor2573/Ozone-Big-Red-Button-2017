@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4611.robot.commands;
 
-import org.usfirst.frc.team4611.robot.OI;
 import org.usfirst.frc.team4611.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -25,7 +24,7 @@ public class SpinAgitator extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.ag.spin((Robot.oi.shootJoy.getZ()+1)*0.5); //Right now, these speeds go from -1 to 1, so we need to
+        Robot.ag.spin(speed); //Right now, these speeds go from -1 to 1, so we need to
         //absolute value the negatives and add a constant to them so that we can make the bottom 0, the 
         //middle 0.5, and the top 1
     }
