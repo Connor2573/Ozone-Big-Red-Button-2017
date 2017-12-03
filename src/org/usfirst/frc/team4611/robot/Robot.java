@@ -13,6 +13,7 @@ import org.usfirst.frc.team4611.robot.subsystems.Agitator;
 import org.usfirst.frc.team4611.robot.subsystems.DriveTrain;
 
 import org.usfirst.frc.team4611.robot.subsystems.Elevator;
+import org.usfirst.frc.team4611.robot.subsystems.Feeder;
 import org.usfirst.frc.team4611.robot.subsystems.ShooterWheels;
 
 
@@ -36,6 +37,7 @@ public class Robot extends IterativeRobot {
 	public static Elevator el;
 	public static ShooterWheels shooterWheels;
 	public static Agitator ag;
+	public static Feeder fe;
 	CameraServer server;
 	CameraServer server2;
 
@@ -55,11 +57,12 @@ public class Robot extends IterativeRobot {
 		//sw = new ShooterWheels();
 		server = CameraServer.getInstance();
 		server.startAutomaticCapture();
-		server2 = CameraServer.getInstance();
-		server2.startAutomaticCapture();
-		el = new Elevator(RobotMap.elevatorPort); 
-		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
+		/*server2 = CameraServer.getInstance();
+		server2.startAutomaticCapture();*/
+		el = new Elevator(); 
+		//spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 		ag = new Agitator();
+		fe = new Feeder();
 		shooterWheels = new ShooterWheels();
 
 		oi = new OI(); //put above this
@@ -124,7 +127,7 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
-		spike.start();	
+		//spike.start();	
 	}
 
 	/**

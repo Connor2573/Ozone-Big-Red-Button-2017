@@ -2,6 +2,7 @@ package org.usfirst.frc.team4611.robot;
 
 
 
+import org.usfirst.frc.team4611.robot.commands.MoveFeeder;
 import org.usfirst.frc.team4611.robot.commands.RaiseElevator;
 import org.usfirst.frc.team4611.robot.commands.ShooterWheelsMove;
 import org.usfirst.frc.team4611.robot.commands.SpinAgitator;
@@ -26,6 +27,7 @@ public class OI {
 	public Button spinAgitator;
 	public Button raiseElevator;
 	public Button lowerElevator;
+	public Button moveFeeder;
 	
 	public OI (){
 		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
@@ -33,16 +35,19 @@ public class OI {
 		
 		//driveTrack = new JoystickButton(leftJoy, 1); What?
 		
-		wheelSpeedAll = new JoystickButton(rightJoy, 10);//button 10 on right
+		wheelSpeedAll = new JoystickButton(leftJoy, 4);
 		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
-		spinAgitator = new JoystickButton(rightJoy, 11); // speed is 0.45
+		spinAgitator = new JoystickButton(rightJoy, 6); // speed is 0.45
 		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
 		
-		raiseElevator = new JoystickButton(rightJoy, 7); //button 7 on rightjoy
+		moveFeeder = new JoystickButton(rightJoy, 5); // speed is 0.45
+		this.moveFeeder.toggleWhenPressed(new MoveFeeder(RobotMap.feederSpeed));
+		
+		raiseElevator = new JoystickButton(rightJoy, 11); //button 7 on rightjoy
 		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
 		
-		lowerElevator = new JoystickButton(rightJoy, 6); //button 6 on rightjoy
+		lowerElevator = new JoystickButton(leftJoy, 7); //button 6 on rightjoy
 		this.lowerElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedDown));
 	}
 	
