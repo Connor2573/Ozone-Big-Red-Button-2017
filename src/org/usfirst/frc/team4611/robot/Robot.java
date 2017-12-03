@@ -37,6 +37,7 @@ public class Robot extends IterativeRobot {
 	public static ShooterWheels shooterWheels;
 	public static Agitator ag;
 	CameraServer server;
+	CameraServer server2;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -54,6 +55,8 @@ public class Robot extends IterativeRobot {
 		//sw = new ShooterWheels();
 		server = CameraServer.getInstance();
 		server.startAutomaticCapture();
+		server2 = CameraServer.getInstance();
+		server2.startAutomaticCapture();
 		el = new Elevator(RobotMap.elevatorPort); 
 		spike = new relaySpike(2 , Relay.Direction.kForward);//port number needed PLEASE!!!
 		ag = new Agitator();
