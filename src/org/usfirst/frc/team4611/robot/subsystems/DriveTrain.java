@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class DriveTrain extends Subsystem {
 
 	public void move(double left, double right) { //Grabs the left and right values that get passed by "TankDrive"
-		 RobotMap.driveTrain.tankDrive(-left, -right); //Use those values for the method "tankDrive" which calls for joystick values
+		 RobotMap.driveTrain.tankDrive(-left,-right); //Use those values for the method "tankDrive" which calls for joystick values
 	}
 	
 	public void rotate(double mag, double direction){
-		RobotMap.driveTrain.drive(mag, direction);
+		RobotMap.driveTrain.drive(mag,direction);
 	}
 	
 	@Override

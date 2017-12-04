@@ -6,13 +6,13 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Agitator extends Subsystem {
+public class Feeder extends Subsystem {
 
-	private Spark agitator;
+	private Victor feeder;
 	
-	public Agitator()
+	public Feeder()
 	{
-		this.agitator = new Spark(RobotMap.agitatorPort);
+		this.feeder= new Victor (RobotMap.feederPort);
 	}
 	
 	@Override
@@ -23,6 +23,6 @@ public class Agitator extends Subsystem {
 	
 	public void spin(double speed)
 	{
-		agitator.set(speed);
+		feeder.set(speed);
 	}
 }
