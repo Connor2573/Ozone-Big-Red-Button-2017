@@ -37,7 +37,7 @@ public class Robot extends IterativeRobot {
 	public static Elevator el;
 	public static ShooterWheels shooterWheels;
 	public static Agitator ag;
-	//public static Feeder fe;
+	public static Feeder fe;
 	CameraServer server;
 	CameraServer server2;
 
