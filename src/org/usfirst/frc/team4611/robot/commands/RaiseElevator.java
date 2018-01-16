@@ -3,6 +3,7 @@ package org.usfirst.frc.team4611.robot.commands;
 import org.usfirst.frc.team4611.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.XboxController;
 
 public class RaiseElevator extends Command {
 
@@ -22,7 +23,12 @@ public class RaiseElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.el.raise(speed);
+    	if(Robot.oi.controller.getAButtonPressed())
+    	{
+    		System.out.println("Go!");
+    	}
+    	else if(Robot.oi.controller.getAButtonReleased())
+    		System.out.println("Stop!");
     }
 	
 	@Override

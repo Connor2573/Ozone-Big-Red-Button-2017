@@ -1,7 +1,8 @@
 package org.usfirst.frc.team4611.robot;
 
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * The RobotMap is where we declare what our constants are
@@ -11,7 +12,7 @@ import edu.wpi.first.wpilibj.Victor;
 public class RobotMap {
 	
 
-	public static RobotDrive driveTrain;
+	public static DifferentialDrive driveTrain;
 	
 	public static Victor driveTrainFL;
 	public static Victor driveTrainFR;
@@ -25,9 +26,10 @@ public class RobotMap {
 	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
 	
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
-	public static int rightJoyPort = 1; //But rather decided from the drivers station by the drivers
-	public static int shootJoyPort = 2; //extra third shooting joystick
-	
+	public static int rightJoyPort = 2; //But rather decided from the drivers station by the drivers
+	//public static int shootJoyPort = 2; //extra third shooting joystick
+	public static int controllerPort = 1;
+	public static boolean useXBox = true;
 
 	public static double shooterSpeedLow = 0.7;
 	public static double shooterSpeedMed = 0.8;
@@ -49,9 +51,10 @@ public class RobotMap {
 		
 		//CAN Ports
 		//CAN ports are decided via software in the roborio web interface 
-		
+		SpeedControllerGroup leftSide = new SpeedControllerGroup(driveTrainFL, driveTrainBL);
+		SpeedControllerGroup rightSide = new SpeedControllerGroup(driveTrainFR, driveTrainBR);
 		//Objects
-		driveTrain =  new RobotDrive(driveTrainFL, driveTrainBL, driveTrainFR, driveTrainBR);
+		driveTrain =  new DifferentialDrive(leftSide, rightSide);
 		
 		//Constants
 				

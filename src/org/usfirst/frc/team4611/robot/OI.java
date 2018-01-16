@@ -7,6 +7,7 @@ import org.usfirst.frc.team4611.robot.commands.ShooterWheelsMove;
 import org.usfirst.frc.team4611.robot.commands.SpinAgitator;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -20,30 +21,47 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
+	public XboxController controller;
+	public RaiseElevator snail;
 	
 	//public Button driveTrack;
-	public Button wheelSpeedAll;
-	public Button spinAgitator;
-	public Button raiseElevator;
-	public Button lowerElevator;
+	//public Button wheelSpeedAll;
+	//public Button spinAgitator;
+	//public Button raiseElevator;
+	//public Button lowerElevator;
 	
 	public OI (){
-		leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
-		rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
+		
+		if(RobotMap.useXBox)
+			controller = new XboxController(RobotMap.controllerPort); //The Xbox controller exists on this port in robot map
+		else
+		{
+			leftJoy = new Joystick(RobotMap.leftJoyPort); //The left joystick exists on this port in robot map
+			rightJoy = new Joystick(RobotMap.rightJoyPort); //The right joystick exists on this port in robot map
+		}
+		
 		
 		//driveTrack = new JoystickButton(leftJoy, 1); What?
 		
-		wheelSpeedAll = new JoystickButton(rightJoy, 10);//button 10 on right
-		this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
+		//wheelSpeedAll = new JoystickButton(rightJoy, 10);//button 10 on right
+		//this.wheelSpeedAll.toggleWhenPressed(new ShooterWheelsMove(RobotMap.shooterSpeedAll));//full power
 		
-		spinAgitator = new JoystickButton(rightJoy, 11); // speed is 0.45
-		this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
 		
-		raiseElevator = new JoystickButton(rightJoy, 7); //button 7 on rightjoy
-		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
 		
-		lowerElevator = new JoystickButton(rightJoy, 6); //button 6 on rightjoy
-		this.lowerElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedDown));
+		//spinAgitator = new JoystickButton(rightJoy, 11); // speed is 0.45
+		//this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
+		
+		//raiseElevator = new JoystickButton(rightJoy, 7); //button 7 on rightjoy
+		//this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
+		//if(controller.getAButton())
+		//{
+		//	System.out.println("Go!");;
+		//}
+		//else
+		//	System.out.println("Ready?");
+		
+		//lowerElevator = new JoystickButton(rightJoy, 6); //button 6 on rightjoy
+		//this.lowerElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedDown));
 	}
 	
 	public double filter(double raw) //We pass joystick values through the filter here and edit the raw value
