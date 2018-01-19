@@ -22,12 +22,11 @@ public class OI {
 	public Joystick leftJoy;
 	public Joystick rightJoy;
 	public XboxController controller;
-	public RaiseElevator snail;
 	
 	//public Button driveTrack;
 	//public Button wheelSpeedAll;
 	//public Button spinAgitator;
-	//public Button raiseElevator;
+	public Button raiseElevator;
 	//public Button lowerElevator;
 	
 	public OI (){
@@ -51,14 +50,8 @@ public class OI {
 		//spinAgitator = new JoystickButton(rightJoy, 11); // speed is 0.45
 		//this.spinAgitator.toggleWhenPressed(new SpinAgitator(RobotMap.agitatorSpeed));
 		
-		//raiseElevator = new JoystickButton(rightJoy, 7); //button 7 on rightjoy
-		//this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
-		//if(controller.getAButton())
-		//{
-		//	System.out.println("Go!");;
-		//}
-		//else
-		//	System.out.println("Ready?");
+		raiseElevator = new JoystickButton(controller, 1); //button 7 on rightjoy
+		this.raiseElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedUp));
 		
 		//lowerElevator = new JoystickButton(rightJoy, 6); //button 6 on rightjoy
 		//this.lowerElevator.whileHeld(new RaiseElevator(RobotMap.elevatorSpeedDown));

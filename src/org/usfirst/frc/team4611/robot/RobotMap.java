@@ -19,23 +19,23 @@ public class RobotMap {
 	public static Victor driveTrainBL;
 	public static Victor driveTrainBR;
 	
-    public static final int leftShooterWheel = 4; //wheel ports
+    public static final int leftShooterWheel = 7; //wheel ports
     public static final int rightShooterWheel = 5;
     
-	public static int elevatorPort = 7; // port number needed PLEASE!!!
+	public static int elevatorPort = 4; // port number needed PLEASE!!!
 	public static int agitatorPort = 6; //CHECK PORT NUMBER PLEASE!!!
 	
 	public static int leftJoyPort = 0; //Joystick can be found on this port. The ports aren't physical plugs
 	public static int rightJoyPort = 2; //But rather decided from the drivers station by the drivers
 	//public static int shootJoyPort = 2; //extra third shooting joystick
-	public static int controllerPort = 1;
+	public static int controllerPort = 0;
 	public static boolean useXBox = true;
 
 	public static double shooterSpeedLow = 0.7;
 	public static double shooterSpeedMed = 0.8;
 	public static double shooterSpeedHigh = 0.9;
 	public static double shooterSpeedAll = 1.0;
-	public static double elevatorSpeedUp = 0.4;
+	public static double elevatorSpeedUp = 0.2;
 	public static double elevatorSpeedDown = -0.4;
 	public static double agitatorSpeed = 0.7;
 

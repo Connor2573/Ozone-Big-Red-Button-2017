@@ -23,12 +23,8 @@ public class RaiseElevator extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if(Robot.oi.controller.getAButtonPressed())
-    	{
-    		System.out.println("Go!");
-    	}
-    	else if(Robot.oi.controller.getAButtonReleased())
-    		System.out.println("Stop!");
+    	System.out.println("Go!");
+    	Robot.el.raise(speed);
     }
 	
 	@Override
@@ -38,7 +34,8 @@ public class RaiseElevator extends Command {
 	}
 	
 	protected void end() {
-        Robot.el.raise(0);
+        System.out.println("Stop!");
+		Robot.el.raise(0);
     }
 
 }
